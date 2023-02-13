@@ -8,6 +8,7 @@ for n in range(10000):
             sum_1 += 1
         elif i % 2 == 0 and b[i] == '0':
             sum_0 += 1
+    # abs() - модуль числа
     if abs(sum_1 - sum_0) == 5:
         print(n)
         break
