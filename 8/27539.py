@@ -7,6 +7,7 @@
 Ответ: 1440
 """
 import itertools
+
 # itertools - библиотека для работы с комбинаторикой
 # product() - функция, получающая все возможные перестановки элементов длины repeat из букв, которые в неё переданы
 variants = itertools.product('БОРИС', repeat=6)
@@ -17,4 +18,18 @@ for v in variants:
     # count() - строковая функция, которая определяет кол-во вхождений букв или слов в строку
     if line.count('Б') == 1 and line.count('Р') == 1 and line.count('С') <= 1:
         count += 1
+print(count)
+
+# --- II способ ---
+# Кол-во циклов равно кол-ву букв в слове
+count = 0
+for i1 in 'БОРИС':
+    for i2 in 'БОРИС':
+        for i3 in 'БОРИС':
+            for i4 in 'БОРИС':
+                for i5 in 'БОРИС':
+                    for i6 in 'БОРИС':
+                        line = i1 + i2 + i3 + i4 + i5 + i6
+                        if line.count('Б') == 1 and line.count('Р') == 1 and line.count('С') <= 1:
+                            count += 1
 print(count)
